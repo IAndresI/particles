@@ -1,13 +1,14 @@
-function particles({
+function particle({
   lifeTime = 10000,
   creationInterval = 400,
   container,
   maximumWidth = 50,
   additionalClass,
-  bottomPadding = 0
+  bottomPadding = 0,
+  parentElement
 }) {
   const section = document.querySelector(container),
-    parent = document.querySelector(".preview"),
+    parent = document.querySelector(parentElement),
     colors = ["#2854aa", "#0a98b1", "#a1284d", "#8c43ff", "#9a3a63", "#5c46cd", "219174"],
     type = ["p", "t", "c"],
     figure = document.createElement("span"),
@@ -48,20 +49,21 @@ function particles({
       container: container,
       maximumWidth: maximumWidth,
       additionalClass: additionalClass,
-      bottomPadding: bottomPadding
+      bottomPadding: bottomPadding,
+      parentElement: parentElement
     });
   }, creationInterval);
 }
 
-export default particles;
 
 // Usage example
 
 // particle({
 //   lifeTime: 10000,
 //   creationInterval: 300,
-//   container: ".container",
+//   container: ".preview__figure-container",
 //   maximumWidth: 50,
-//   additionalClass: "figure-additional",
-//   bottomPadding: 150
+//   additionalClass: "preview__figure",
+//   bottomPadding: 150,
+//   parentElement: ".preview"
 // });
