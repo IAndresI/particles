@@ -20,7 +20,7 @@ function particle({
   figure.style.width = figure.style.height = figureSize + "px";
   let figureTop = Math.random() * innerHeight;
   if (figureTop >= parent.offsetHeight - bottomPadding) figureTop = parent.offsetHeight - bottomPadding;
-  figure.style.left = Math.random() * innerWidth - 60 + "px";
+  figure.style.left = Math.random() * document.documentElement.offsetWidth - 60 + "px";
   figure.style.top = figureTop + "px";
   figure.style.backgroundColor = figureColor;
   switch (figureType) {
@@ -61,9 +61,9 @@ function particle({
 // particle({
 //   lifeTime: 10000,
 //   creationInterval: 300,
-//   container: ".preview__figure-container",
+//   container: ".container",
 //   maximumWidth: 50,
-//   additionalClass: "preview__figure",
+//   additionalClass: "figure-animation",
 //   bottomPadding: 150,
-//   parentElement: ".preview"
+//   parentElement: ".parent"
 // });
